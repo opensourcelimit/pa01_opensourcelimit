@@ -30,9 +30,9 @@ private:
 public:
     void append(char suit, char rank);
     void outputCards() const;
-    void remove(Node* currentNode);
+    void remove(Card* currentNode);
     Cardlist():head(nullptr),tail(nullptr) {}
-    ~Cardlist()
+    ~Cardlist();
 };
 
 #endif

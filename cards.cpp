@@ -7,10 +7,10 @@
 using namespace std;
 
 
-
+//Remove function removes a card from a doubly linked list
 void Cardlist::remove(Card* removeThis){
     Card* suc = removeThis->next;
-    Card* pre = removeTHis->previous;
+    Card* pre = removeThis->previous;
 
     if(suc){
         suc->previous = pre;
@@ -25,7 +25,7 @@ void Cardlist::remove(Card* removeThis){
      
     }
     if(removeThis == this->head){
-        removeThis->next->previous = nullptr
+        removeThis->next->previous = nullptr;
 
     }
     delete removeThis;
@@ -34,6 +34,23 @@ void Cardlist::remove(Card* removeThis){
 }
 
 
+Cardlist::~Cardlist(){
+   Card* traverse = head;
+   Card* dCard;
+   while(traverse){
+    dCard = traverse;
+    traverse = traverse->next;
+    delete dCard;
+   }
+
+
+
+}
+
+
+
+
+//Adds a card of a given suit and rank to the end of a players hand
 void Cardlist::append(char suit, char rank)
 {
     Card* newcard = new Card{suit,rank};
@@ -54,6 +71,7 @@ void Cardlist::append(char suit, char rank)
 
 }
 
+//Outputs players entire hand to console
 void Cardlist::outputCards() const{
     if(!head){ cout << "empty hand";
     }
