@@ -5,6 +5,36 @@
 #ifndef CARDS_H
 #define CARDS_H
 
+#include <iostream>
+using namespace std;
+
+class Card {
+    public:
+    char suit;
+    char rank;
+    Card* next = nullptr;
+    Card* previous = nullptr;    
+   
+    Card(char suitInput ='z', char rankInput = 'z'): suit(suitInput), rank(rankInput) {}
+    bool operator==(const Card &secondCard);
+    bool operator!=(const Card &secondCard);
+    friend ostream& operator<<(ostream& os, const Card &outputCard);
+
+ 
+};
+
+class Cardlist {
+private:
+    Card* head;
+    Card* tail;
+public:
+    void append(char suit, char rank);
+    void outputCards() const;
+    void remove(Node* currentNode);
+    Cardlist():head(nullptr),tail(nullptr) {}
+    ~Cardlist()
+};
+
 #endif
 
 // Use this file to define all your classes and public functions
