@@ -54,7 +54,7 @@ using namespace std;
                 opp.current = opp.current->next;
             }
             //Output player who picked card, and card to be removed from both hands
-            cout << name <<" picked  matching card " << *current << endl;
+            cout << name <<" picked matching card " << *current << endl;
             
             //Remove matching card from players and opponents hand, update current players next.
            opp.playerHand.remove(current->suit, current->rank);
