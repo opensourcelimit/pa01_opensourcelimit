@@ -37,7 +37,7 @@ Alice.append('h','3');
 Card* headHolder;
 headHolder = Alice.getHead();
 
-
+cout << *headHolder;
 
 
 }
