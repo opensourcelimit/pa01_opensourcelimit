@@ -13,7 +13,7 @@ class Card {
     char suit;
     char rank;
     Card* next = nullptr;
-    Card* previous = nullptr;    
+   // Card* previous = nullptr;    
    
     Card(char suitInput ='z', char rankInput = 'z'): suit(suitInput), rank(rankInput) {}
     bool operator==(const Card &secondCard);
@@ -27,12 +27,43 @@ class Cardlist {
 private:
     Card* head;
     Card* tail;
+    void remove(Card* removeThis);
 public:
+    Card* getHead()
+    {
+        return head;
+
+    }
     void append(char suit, char rank);
     void outputCards() const;
-    void remove(Card* currentNode);
+    void remove(char suit, char rank);
+   
+    Card* search(char suit, char rank);
     Cardlist():head(nullptr),tail(nullptr) {}
     ~Cardlist();
+};
+
+
+class Player {
+
+public:
+    Card* current;
+    string name;
+    
+    Cardlist playerHand;
+        
+    void Hand();
+
+    void setupGame(string pname);
+       
+    bool searchCard(char suit, char rank);
+  
+
+    void game(Card* current, Player &opp);
+      
+
+
+
 };
 
 #endif

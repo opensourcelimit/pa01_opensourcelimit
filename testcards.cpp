@@ -12,16 +12,30 @@ int main(){
   runAll();
   return 0;
 }
-void test_remove(){
+void removeHead(){
 Cardlist Alice;
 Alice.append('h','q');
 Alice.append('h','k');
 Alice.append('h','2');
 Alice.append('h','3');
 
-ALice.outputCards();
+Alice.outputCards();
 cout << "After Remove first card" << endl;
-Alice.remove(head);
+Alice.remove('h','q');
+Alice.outputCards();
+
+
+}
+void test_getHead(){
+
+Cardlist Alice;
+Alice.append('h','q');
+Alice.append('h','k');
+Alice.append('h','2');
+Alice.append('h','3');
+
+Card* = head;
+
 
 
 
@@ -30,6 +44,13 @@ void runAll(){
   test_append();
   //test_equal();
   test_card();
+  test_remove();
+}
+void test_remove(){
+    START_TEST("test_remove");
+    removeHead();
+    END_TEST("test_remove");
+
 }
 
 void test_append(){

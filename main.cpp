@@ -29,25 +29,41 @@ int main(int argv, char** argc){
   // to contain two sets of cards in two input files
   
   //Test input from file
-  Cardlist Alice;
-  Cardlist Bob;
+  Player Alice;
+  Player Bob;
  
  // Read each file and store cards
  
   
   while (getline (cardFile1, line) && (line.length() > 0)){
-    Alice.append(line.at(0),line.at(2));  
+    Alice.playerHand.append(line.at(0),line.at(2));  
   }
-  cardFile1.close();
+   cardFile1.close();
 
 
 
   while (getline (cardFile2, line) && (line.length() > 0)){
-   Bob.append(line.at(0),line.at(2));
+   Bob.playerHand.append(line.at(0),line.at(2));
   }
   cardFile2.close();
   // Start the game
-  //
-  Alice.outputCards();
+  
+  //Set the name of player objects and have their
+  //current card point to the head of the linked list
+  //that was made to hold their cards
+
+  Alice.setupGame("Alice");
+  Bob.setupGame("Bob");
+ 
+
+  Alice.game(Alice.current, Bob);
+  cout << endl;
+
+  //Output end hand of both players
+  Alice.Hand();
+  cout << endl;
+
+  Bob.Hand();
+  cout << endl;
   return 0;
 }
