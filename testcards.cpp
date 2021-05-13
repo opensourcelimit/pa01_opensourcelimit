@@ -34,7 +34,8 @@ Alice.append('h','k');
 Alice.append('h','2');
 Alice.append('h','3');
 
-Card* = head;
+Card* headHolder;
+headHolder = Alice.getHead();
 
 
 

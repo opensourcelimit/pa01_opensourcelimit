@@ -5,7 +5,8 @@
 #include "cards.h"
 
 using namespace std;
- void Player::Hand(){
+
+void Player::Hand(){
    cout << name <<"'s" <<" cards:\n";
    playerHand.outputCards();
 
@@ -62,7 +63,7 @@ using namespace std;
             
 
            
-            current = current->next;
+            current = curNext;
             //Now that matching card has been found, its time to switch player turns, opponent calls game.
             opp.game(opp.current,*this);
         }
