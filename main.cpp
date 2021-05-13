@@ -64,6 +64,6 @@ int main(int argv, char** argc){
   cout << endl;
 
   Bob.Hand();
-  cout << endl;
+  
   return 0;
 }
