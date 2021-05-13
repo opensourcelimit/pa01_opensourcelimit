@@ -6,7 +6,7 @@
 
 using namespace std;
  void Player::Hand(){
-   cout << name <<"'s" <<" Hand\n";
+   cout << name <<"'s" <<" cards:\n";
    playerHand.outputCards();
 
 
