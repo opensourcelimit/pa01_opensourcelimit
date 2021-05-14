@@ -1,5 +1,5 @@
 //cards.cpp
-//Authors: Your Partner's Name and Your Name
+//Author: Jorge Medina
 //Implementation of the classes defined in cards.h
 #include <iostream>
 #include "cards.h"
